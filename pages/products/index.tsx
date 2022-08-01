@@ -1,10 +1,10 @@
-import type { NextPage } from 'next';
 import Head from 'next/head';
-import { Footer } from '../src/core/components/footer';
-import { NavBar } from '../src/core/components/navbar';
-import { ProductHome } from '../src/packages/product/containers';
+import React from 'react';
+import { Footer } from '../../src/core/components/footer';
+import { NavBar } from '../../src/core/components/navbar';
+interface ProductFullListPageProps {}
 
-const Home: NextPage = () => {
+const ProductFullListPage: React.FC<ProductFullListPageProps> = () => {
     return (
         <>
             <Head>
@@ -14,10 +14,9 @@ const Home: NextPage = () => {
             </Head>
 
             <NavBar />
-            <ProductHome />
             <Footer />
         </>
     );
 };
 
-export default Home;
+export default ProductFullListPage;
