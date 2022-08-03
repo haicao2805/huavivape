@@ -12,7 +12,7 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
     return (
         <div
             key={product.id}
-            className="relative flex flex-col group"
+            className="relative flex flex-col cursor-pointer group"
             onClick={() => {
                 router.push(`/products/${product.id}`);
             }}
@@ -21,7 +21,7 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
                 <img src={product.images[0].src} alt={product.images[0].alt} className="object-cover object-center w-full h-full" />
             </div>
             <div className="flex flex-col justify-between flex-1 space-y-2">
-                <div className="text-center duration-300 hover:bg-orange-200">
+                <div className="text-center duration-300 ">
                     <p className="text-sm text-gray-500">{product.category}</p>
                 </div>
                 <div className="flex-1 ">

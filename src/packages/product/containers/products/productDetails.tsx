@@ -1,19 +1,36 @@
 import { Disclosure, RadioGroup, Tab } from '@headlessui/react';
-import { HeartIcon, MinusSmIcon, PlusSmIcon, StarIcon } from '@heroicons/react/solid';
+import { HeartIcon, MinusSmIcon, PaperClipIcon, PlusSmIcon, StarIcon } from '@heroicons/react/solid';
 import React from 'react';
+import { productData } from '../../../../core/data/productData';
 import { Product } from '../../../../core/models/product';
 import { toMoney } from '../../../../core/utils/moneyString';
 interface ProductDetailProps {
-    product: Product;
+    id: string;
 }
 
 function classNames(...classes: any) {
     return classes.filter(Boolean).join(' ');
 }
 
-export const ProductDetail: React.FC<ProductDetailProps> = ({ product }) => {
+const defaultProduct: Product = {
+    id: '',
+    category: '',
+    description: '',
+    name: '',
+    price: -1,
+    images: [],
+};
+
+export const ProductDetail: React.FC<ProductDetailProps> = ({ id }) => {
+    const [product, setProduct] = React.useState(defaultProduct);
+
+    React.useEffect(() => {
+        let productDB = productData.find((item) => item.id === id);
+        setProduct(productDB!);
+    }, [id]);
+
     return (
-        <div className="bg-white">
+        <div className="py-4 bg-white">
             <div className="max-w-2xl px-4 py-16 mx-auto sm:py-24 sm:px-6 lg:max-w-7xl lg:px-8">
                 <div className="lg:grid lg:grid-cols-2 lg:gap-x-8 lg:items-start">
                     <Tab.Group as="div" className="flex flex-col-reverse">
@@ -75,6 +92,45 @@ export const ProductDetail: React.FC<ProductDetailProps> = ({ product }) => {
                             </div>
                         </form>
                     </div>
+                </div>
+            </div>
+            <div className="max-w-4xl px-4 py-8 mx-auto overflow-hidden bg-white shadow sm:rounded-lg">
+                <div className="px-4 py-5 sm:px-6">
+                    <h3 className="text-lg font-medium leading-6 text-gray-900">Thông tin chi tiết</h3>
+                </div>
+                <div className="border-t border-gray-200">
+                    <dl>
+                        <div className="px-4 py-5 bg-gray-50 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+                            <dt className="text-sm font-medium text-gray-500">Tính Năng</dt>
+                            <ul className="col-span-2 list-disc marker:text-gray-500">
+                                <li className="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">Dung lượng pin lớn đem tới 3500 hơi</li>
+                                <li className="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">22 Hương vị lựa chọn hoàn hảo</li>
+                                <li className="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">Mesh coil 1.0 đem lại trải nghiệm hương vị tốt</li>
+                                <li className="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">Luồng không khí sáng tạo</li>
+                                <li className="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
+                                    Cảm biến hơi tự động tái tạo trải nghiệm hút hoàn hảo
+                                </li>
+                            </ul>
+                        </div>
+                        <div className="px-4 py-5 bg-white sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+                            <dt className="text-sm font-medium text-gray-500">Thông Số Kỹ Thuật</dt>
+                            <ul className="col-span-2 list-disc marker:text-gray-500">
+                                <li className="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">Kích thước: 100mm x 24,5mm</li>
+                                <li className="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">Chất liệu: Hợp kim nhôm & Nhựa PCTG</li>
+                                <li className="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">Dung lượng: 1400mAh</li>
+                                <li className="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">Dung tích: 10ml (chứa sẵn tinh dầu)</li>
+                                <li className="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">Công suất: 12w</li>
+                                <li className="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">Hàm Lượng: 50mg</li>
+                            </ul>
+                        </div>
+                        <div className="px-4 py-5 bg-gray-50 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+                            <dt className="text-sm font-medium text-gray-500">Hộp Sản Phẩm</dt>
+                            <ul className="col-span-2 list-disc marker:text-gray-500">
+                                <li className="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">1 Pod / 1 Hộp</li>
+                                <li className="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">10 Hộp / 1 Pack</li>
+                            </ul>
+                        </div>
+                    </dl>
                 </div>
             </div>
         </div>
