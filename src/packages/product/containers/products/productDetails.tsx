@@ -2,7 +2,7 @@ import { Disclosure, RadioGroup, Tab } from '@headlessui/react';
 import { HeartIcon, MinusSmIcon, PaperClipIcon, PlusSmIcon, StarIcon } from '@heroicons/react/solid';
 import React from 'react';
 import { productData } from '../../../../core/data/productData';
-import { Product } from '../../../../core/models/product';
+import { Product, ProductCategory } from '../../../../core/models/product';
 import { toMoney } from '../../../../core/utils/moneyString';
 interface ProductDetailProps {
     id: string;
@@ -14,7 +14,7 @@ function classNames(...classes: any) {
 
 const defaultProduct: Product = {
     id: '',
-    category: '',
+    category: ProductCategory.PodOneTime,
     description: '',
     name: '',
     price: -1,

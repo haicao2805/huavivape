@@ -12,16 +12,14 @@ const user = {
         'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
 };
 const navigation = [
-    { name: 'TRANG CHỦ', href: '/', current: true },
-    { name: 'POD KIT', href: '#', current: false },
-    { name: 'POD 1 LẦN', href: '#', current: false },
-    { name: 'VAPE KIT', href: '#', current: false },
+    { name: 'Trang chủ', href: '/' },
+    { name: 'Pod 1 lần', href: '/products?category=Pod 1 lần' },
 ];
-const userNavigation = [
-    { name: 'Your Profile', href: '#' },
-    { name: 'Settings', href: '#' },
-    { name: 'Sign out', href: '#' },
-];
+// const userNavigation = [
+//     { name: 'Your Profile', href: '#' },
+//     { name: 'Settings', href: '#' },
+//     { name: 'Sign out', href: '#' },
+// ];
 
 function classNames(...classes: any[]) {
     return classes.filter(Boolean).join(' ');
@@ -126,11 +124,7 @@ export const NavBar: React.FC<NavBarProps> = () => {
                                 <Link href={item.href}>
                                     <p
                                         key={item.name}
-                                        className={classNames(
-                                            item.current ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white',
-                                            'rounded-md py-2 px-3 inline-flex items-center text-sm font-medium'
-                                        )}
-                                        aria-current={item.current ? 'page' : undefined}
+                                        className="block px-3 py-2 text-base font-medium text-gray-300 rounded-md cursor-pointer hover:bg-gray-700 hover:text-white"
                                     >
                                         {item.name}
                                     </p>
@@ -146,11 +140,7 @@ export const NavBar: React.FC<NavBarProps> = () => {
                                     key={item.name}
                                     as="a"
                                     href={item.href}
-                                    className={classNames(
-                                        item.current ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white',
-                                        'block rounded-md py-2 px-3 text-base font-medium'
-                                    )}
-                                    aria-current={item.current ? 'page' : undefined}
+                                    className="block px-3 py-2 text-base font-medium text-gray-300 rounded-md cursor-pointer hover:bg-gray-700 hover:text-white"
                                 >
                                     {item.name}
                                 </Disclosure.Button>

@@ -1,10 +1,16 @@
+import { NextPage, NextPageContext } from 'next';
 import Head from 'next/head';
+import { useRouter } from 'next/router';
 import React from 'react';
 import { Footer } from '../../src/core/components/footer';
 import { NavBar } from '../../src/core/components/navbar';
-interface ProductFullListPageProps {}
+import { productData } from '../../src/core/data/productData';
+import { ProductFullList } from '../../src/packages/product/containers';
+interface ProductFullListPageProps {
+    category: string;
+}
 
-const ProductFullListPage: React.FC<ProductFullListPageProps> = () => {
+const ProductFullListPage: NextPage<ProductFullListPageProps> = ({ category }) => {
     return (
         <>
             <Head>
@@ -14,9 +20,15 @@ const ProductFullListPage: React.FC<ProductFullListPageProps> = () => {
             </Head>
 
             <NavBar />
+            <ProductFullList category={category} />
             <Footer />
         </>
     );
+};
+
+ProductFullListPage.getInitialProps = async (ctx: NextPageContext): Promise<ProductFullListPageProps> => {
+    let props = { category: ctx.query.category || '' };
+    return props as ProductFullListPageProps;
 };
 
 export default ProductFullListPage;

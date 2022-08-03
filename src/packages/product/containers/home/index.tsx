@@ -6,9 +6,7 @@ interface ProductHomeProps {}
 export const ProductHome: React.FC<ProductHomeProps> = () => {
     return (
         <>
-            <ProductPreviewList label="Ưu đãi" products={productData} />
-            <ProductPreviewList label="Bán chạy" products={productData} />
-            <ProductPreviewList label="POD Kit" products={productData} />
+            <ProductPreviewList label="Pod 1 lần" products={productData.filter((item) => item.category === 'Pod 1 lần')} />
         </>
     );
 };

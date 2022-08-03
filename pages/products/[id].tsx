@@ -30,7 +30,6 @@ const ProductDetailPage: NextPage<ProductDetailPageProps> = ({ id }) => {
 
 ProductDetailPage.getInitialProps = async (ctx: NextPageContext): Promise<ProductDetailPageProps> => {
     let props = { id: ctx.query?.id || '' };
-
     return props as ProductDetailPageProps;
 };
 

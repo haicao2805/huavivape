@@ -4,7 +4,11 @@ export interface Product {
     id: string;
     name: string;
     price: number;
-    category: string;
+    category: ProductCategory;
     description: string;
     images: Image[];
+}
+
+export enum ProductCategory {
+    PodOneTime = 'Pod 1 lần',
 }
