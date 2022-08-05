@@ -37,7 +37,7 @@ export const NavBar: React.FC<NavBarProps> = () => {
                             <div className="relative z-10 flex px-2 lg:px-0">
                                 <Link href="/">
                                     <div className="flex items-center flex-shrink-0 cursor-pointer">
-                                        <img className="block w-auto h-32" src="/assets/images/huavivape.png" alt="Logo" />
+                                        <Image className="block w-auto h-32" src="/assets/images/huavivape.png" alt="Logo" />
                                     </div>
                                 </Link>
                             </div>
@@ -86,7 +86,7 @@ export const NavBar: React.FC<NavBarProps> = () => {
                                     <div>
                                         <Menu.Button className="flex text-sm text-white bg-gray-800 rounded-full focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white">
                                             <span className="sr-only">Open user menu</span>
-                                            <img className="w-8 h-8 rounded-full" src={user.imageUrl} alt="" />
+                                            <Image className="w-8 h-8 rounded-full" src={user.imageUrl} alt="" />
                                         </Menu.Button>
                                     </div>
                                     <Transition
@@ -121,11 +121,8 @@ export const NavBar: React.FC<NavBarProps> = () => {
                         </div>
                         <nav className="hidden lg:py-2 lg:flex lg:space-x-8" aria-label="Global">
                             {navigation.map((item) => (
-                                <Link href={item.href}>
-                                    <p
-                                        key={item.name}
-                                        className="block px-3 py-2 text-base font-medium text-gray-300 rounded-md cursor-pointer hover:bg-gray-700 hover:text-white"
-                                    >
+                                <Link key={item.name} href={item.href}>
+                                    <p className="block px-3 py-2 text-base font-medium text-gray-300 rounded-md cursor-pointer hover:bg-gray-700 hover:text-white">
                                         {item.name}
                                     </p>
                                 </Link>
@@ -149,7 +146,7 @@ export const NavBar: React.FC<NavBarProps> = () => {
                         {/* <div className="pt-4 pb-3 border-t border-gray-700">
                             <div className="flex items-center px-4">
                                 <div className="flex-shrink-0">
-                                    <img className="w-10 h-10 rounded-full" src={user.imageUrl} alt="" />
+                                    <Image className="w-10 h-10 rounded-full" src={user.imageUrl} alt="" />
                                 </div>
                                 <div className="ml-3">
                                     <div className="text-base font-medium text-white">{user.name}</div>

@@ -7,6 +7,9 @@ export interface Product {
     category: ProductCategory;
     description: string;
     images: Image[];
+    features: string[];
+    specifications: string[];
+    boxInformations: string[];
 }
 
 export enum ProductCategory {

@@ -4,7 +4,7 @@ import { useRouter } from 'next/router';
 import React from 'react';
 import { Footer } from '../../src/core/components/footer';
 import { NavBar } from '../../src/core/components/navbar';
-import { productData } from '../../src/core/data/productData';
+import { Layout } from '../../src/packages/product/components/layout';
 import { ProductFullList } from '../../src/packages/product/containers';
 interface ProductFullListPageProps {
     category: string;
@@ -19,9 +19,9 @@ const ProductFullListPage: NextPage<ProductFullListPageProps> = ({ category }) =
                 <link rel="icon" href="/favicon.ico" />
             </Head>
 
-            <NavBar />
-            <ProductFullList category={category} />
-            <Footer />
+            <Layout>
+                <ProductFullList category={category} />
+            </Layout>
         </>
     );
 };

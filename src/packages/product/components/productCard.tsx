@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import { useRouter } from 'next/router';
 import React from 'react';
 import { Product } from '../../../core/models/product';
@@ -18,7 +19,7 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
             }}
         >
             <div className="w-full h-56 overflow-hidden bg-gray-200 rounded-md group-hover:opacity-75 lg:h-72 xl:h-80">
-                <img src={product.images[0].src} alt={product.images[0].alt} className="object-cover object-center w-full h-full" />
+                <Image src={product.images[0].src} alt={product.images[0].alt} className="object-cover object-center w-full h-full" />
             </div>
             <div className="flex flex-col justify-between flex-1 space-y-2">
                 <div className="text-center duration-300 ">

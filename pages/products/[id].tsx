@@ -6,6 +6,7 @@ import { Footer } from '../../src/core/components/footer';
 import { NavBar } from '../../src/core/components/navbar';
 import { productData } from '../../src/core/data/productData';
 import { Product } from '../../src/core/models/product';
+import { Layout } from '../../src/packages/product/components/layout';
 import { ProductDetail } from '../../src/packages/product/containers';
 interface ProductDetailPageProps {
     id: string;
@@ -20,10 +21,9 @@ const ProductDetailPage: NextPage<ProductDetailPageProps> = ({ id }) => {
                 <link rel="icon" href="/favicon.ico" />
             </Head>
 
-            <NavBar />
-
-            <ProductDetail id={id} />
-            <Footer />
+            <Layout>
+                <ProductDetail id={id} />
+            </Layout>
         </>
     );
 };

@@ -12,7 +12,7 @@ export const ProductPreviewList: React.FC<ProductPreviewListProps> = ({ products
             <div className="max-w-2xl px-4 py-4 mx-auto sm:py-8 sm:px-6 lg:max-w-7xl lg:px-8">
                 <div className="md:flex md:items-center md:justify-between">
                     <h2 className="text-2xl font-bold tracking-tight text-gray-900">{label}</h2>
-                    <a href="#" className="hidden text-sm font-medium text-indigo-600 hover:text-indigo-500 md:block">
+                    <a href={`/products?category=${label}`} className="hidden text-sm font-medium text-indigo-600 hover:text-indigo-500 md:block">
                         Xem thêm<span aria-hidden="true"> &rarr;</span>
                     </a>
                 </div>
