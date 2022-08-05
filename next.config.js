@@ -24,5 +24,5 @@ module.exports = {
 };
 
 module.exports = {
-    output: 'docs',
+    distDir: 'docs',
 };
