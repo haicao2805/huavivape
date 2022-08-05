@@ -22,7 +22,3 @@ module.exports = {
         },
     },
 };
-
-module.exports = {
-    distDir: 'docs',
-};
