@@ -1,9 +1,6 @@
 import { NextPage, NextPageContext } from 'next';
 import Head from 'next/head';
-import { useRouter } from 'next/router';
 import React from 'react';
-import { Footer } from '../../src/core/components/footer';
-import { NavBar } from '../../src/core/components/navbar';
 import { Layout } from '../../src/packages/product/components/layout';
 import { ProductFullList } from '../../src/packages/product/containers';
 interface ProductFullListPageProps {

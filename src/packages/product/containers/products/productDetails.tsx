@@ -1,7 +1,5 @@
-import { Disclosure, RadioGroup, Tab } from '@headlessui/react';
-import { HeartIcon, MinusSmIcon, PaperClipIcon, PlusSmIcon, StarIcon } from '@heroicons/react/solid';
+import { Tab } from '@headlessui/react';
 import { NextSeo } from 'next-seo';
-import Image from 'next/image';
 import React from 'react';
 import { productData } from '../../../../../public/data/productData';
 import { Product, ProductCategory } from '../../../../core/models/product';
