@@ -37,7 +37,7 @@ export const NavBar: React.FC<NavBarProps> = () => {
                             <div className="relative z-10 flex px-2 lg:px-0">
                                 <Link href="/">
                                     <div className="flex items-center flex-shrink-0 cursor-pointer">
-                                        <Image className="block w-auto h-32" src="/assets/images/huavivape.png" alt="Logo" />
+                                        <img className="block w-auto h-32" src="/assets/images/huavivape.png" alt="Logo" />
                                     </div>
                                 </Link>
                             </div>
@@ -86,7 +86,7 @@ export const NavBar: React.FC<NavBarProps> = () => {
                                     <div>
                                         <Menu.Button className="flex text-sm text-white bg-gray-800 rounded-full focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white">
                                             <span className="sr-only">Open user menu</span>
-                                            <Image className="w-8 h-8 rounded-full" src={user.imageUrl} alt="" />
+                                            <img className="w-8 h-8 rounded-full" src={user.imageUrl} alt="" />
                                         </Menu.Button>
                                     </div>
                                     <Transition
@@ -146,7 +146,7 @@ export const NavBar: React.FC<NavBarProps> = () => {
                         {/* <div className="pt-4 pb-3 border-t border-gray-700">
                             <div className="flex items-center px-4">
                                 <div className="flex-shrink-0">
-                                    <Image className="w-10 h-10 rounded-full" src={user.imageUrl} alt="" />
+                                    <img className="w-10 h-10 rounded-full" src={user.imageUrl} alt="" />
                                 </div>
                                 <div className="ml-3">
                                     <div className="text-base font-medium text-white">{user.name}</div>

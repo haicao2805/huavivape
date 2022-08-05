@@ -64,7 +64,7 @@ export const ProductDetail: React.FC<ProductDetailProps> = ({ id }) => {
                                             {({ selected }) => (
                                                 <>
                                                     <span className="absolute inset-0 overflow-hidden rounded-md">
-                                                        <Image src={image.src} alt={image.src} className="object-cover object-center w-full h-full" />
+                                                        <img src={image.src} alt={image.src} className="object-cover object-center w-full h-full" />
                                                     </span>
                                                     <span
                                                         className={classNames(
@@ -83,7 +83,7 @@ export const ProductDetail: React.FC<ProductDetailProps> = ({ id }) => {
                             <Tab.Panels className="w-full aspect-w-1 aspect-h-1">
                                 {product.images?.map((image) => (
                                     <Tab.Panel key={image.id}>
-                                        <Image src={image.src} alt={image.alt} className="object-cover object-center w-full h-full sm:rounded-lg" />
+                                        <img src={image.src} alt={image.alt} className="object-cover object-center w-full h-full sm:rounded-lg" />
                                     </Tab.Panel>
                                 ))}
                             </Tab.Panels>
