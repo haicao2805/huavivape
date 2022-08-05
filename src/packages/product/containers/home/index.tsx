@@ -1,5 +1,5 @@
 import React from 'react';
-import { productData } from '../../../../core/data/productData';
+import { productData } from '../../../../../public/data/productData';
 import { ProductCategory } from '../../../../core/models/product';
 import { ProductPreviewList } from '../../components';
 interface ProductHomeProps {}

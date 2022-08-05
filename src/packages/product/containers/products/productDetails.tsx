@@ -3,7 +3,7 @@ import { HeartIcon, MinusSmIcon, PaperClipIcon, PlusSmIcon, StarIcon } from '@he
 import { NextSeo } from 'next-seo';
 import Image from 'next/image';
 import React from 'react';
-import { productData } from '../../../../core/data/productData';
+import { productData } from '../../../../../public/data/productData';
 import { Product, ProductCategory } from '../../../../core/models/product';
 import { toMoney } from '../../../../core/utils/moneyString';
 interface ProductDetailProps {

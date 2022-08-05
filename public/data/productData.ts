@@ -1,4 +1,4 @@
-import { Product, ProductCategory } from '../models/product';
+import { Product, ProductCategory } from '../../src/core/models/product';
 
 export const productData: Product[] = [
     {
