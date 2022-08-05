@@ -22,3 +22,7 @@ module.exports = {
         },
     },
 };
+
+module.exports = {
+    output: 'docs',
+};
