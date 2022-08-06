@@ -9,7 +9,7 @@ export const ProductHome: React.FC<ProductHomeProps> = () => {
         <>
             <div className="flex flex-row">
                 <div>
-                    <video src="/assets/videos/introvideo1.mp4" autoPlay loop muted className="max-h-screen" />
+                    <video src="/assets/videos/introvideo1.mov" autoPlay loop muted className="max-h-screen" />
                 </div>
                 <div>
                     <video src="/assets/videos/introvideo2.mov" autoPlay loop muted className="max-h-screen" />

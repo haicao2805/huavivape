@@ -10,6 +10,7 @@ export interface Product {
     features: string[];
     specifications: string[];
     boxInformations: string[];
+    tastes: string[];
 }
 
 export enum ProductCategory {

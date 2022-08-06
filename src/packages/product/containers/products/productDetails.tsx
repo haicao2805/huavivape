@@ -22,6 +22,7 @@ const defaultProduct: Product = {
     features: [],
     boxInformations: [],
     specifications: [],
+    tastes: [],
 };
 
 export const ProductDetail: React.FC<ProductDetailProps> = ({ id }) => {
@@ -96,7 +97,16 @@ export const ProductDetail: React.FC<ProductDetailProps> = ({ id }) => {
                             </div>
 
                             <div className="mt-6">
-                                <div className="space-y-6 text-base text-gray-700">{product.description}</div>
+                                <p className="space-y-6 text-base text-gray-700">{product.description}</p>
+                            </div>
+
+                            <div className="mt-6">
+                                <h2 className="m-1 font-semibold">Hương vị</h2>
+                                <div>
+                                    {product.tastes.map((item) => (
+                                        <p className="inline-block px-3 py-[0.5] border-2 m-1 hover:bg-indigo-600 cursor-pointer">{item}</p>
+                                    ))}
+                                </div>
                             </div>
 
                             <form className="mt-6">
