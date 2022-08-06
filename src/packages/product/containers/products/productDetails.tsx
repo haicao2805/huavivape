@@ -103,8 +103,10 @@ export const ProductDetail: React.FC<ProductDetailProps> = ({ id }) => {
                             <div className="mt-6">
                                 <h2 className="m-1 font-semibold">Hương vị</h2>
                                 <div>
-                                    {product.tastes.map((item) => (
-                                        <p className="inline-block px-3 py-[0.5] border-2 m-1 hover:bg-indigo-600 cursor-pointer">{item}</p>
+                                    {product.tastes.map((item, index) => (
+                                        <p key={index} className="inline-block px-3 py-[0.5] border-2 m-1 hover:bg-indigo-600 cursor-pointer">
+                                            {item}
+                                        </p>
                                     ))}
                                 </div>
                             </div>
