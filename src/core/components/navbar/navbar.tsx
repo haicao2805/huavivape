@@ -25,7 +25,7 @@ function classNames(...classes: any[]) {
     return classes.filter(Boolean).join(' ');
 }
 
-interface NavBarProps {}
+interface NavBarProps { }
 
 export const NavBar: React.FC<NavBarProps> = () => {
     return (
@@ -33,33 +33,25 @@ export const NavBar: React.FC<NavBarProps> = () => {
             {({ open }) => (
                 <>
                     <div className="px-2 mx-auto max-w-7xl sm:px-4 lg:divide-y lg:divide-gray-700 lg:px-8">
-                        <div className="relative flex justify-between h-auto">
-                            <div className="relative z-10 flex px-2 lg:px-0">
+                        <div className="relative flex items-center justify-between h-auto">
+                            <div className="relative z-10 flex px-2 gap-x-10 lg:px-0">
                                 <Link href="/">
                                     <div className="flex items-center flex-shrink-0 cursor-pointer">
                                         <img className="block w-auto h-32" src="/assets/images/huavivape.png" alt="Logo" />
                                     </div>
                                 </Link>
+                                <nav className="items-center hidden lg:py-2 lg:flex lg:space-x-8" aria-label="Global">
+                                    {navigation.map((item) => (
+                                        <Link key={item.name} href={item.href}>
+                                            <p className="block px-3 py-2 text-base font-medium text-gray-300 rounded-md cursor-pointer hover:bg-gray-700 hover:text-white">
+                                                {item.name}
+                                            </p>
+                                        </Link>
+                                    ))}
+                                </nav>
                             </div>
-                            <div className="relative z-0 flex items-center justify-end flex-1 px-2 sm:absolute sm:inset-0">
-                                <div className="w-full sm:max-w-xs">
-                                    <label htmlFor="search" className="sr-only">
-                                        Search
-                                    </label>
-                                    <div className="relative">
-                                        <div className="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
-                                            <SearchIcon className="w-5 h-5 text-gray-400" aria-hidden="true" />
-                                        </div>
-                                        <input
-                                            id="search"
-                                            name="search"
-                                            className="block w-full py-2 pl-10 pr-3 text-sm placeholder-gray-400 bg-gray-700 border border-transparent rounded-md focus:outline-none focus:bg-white focus:border-white focus:ring-white focus:text-gray-900 focus:placeholder-gray-500 sm:text-sm"
-                                            placeholder="Search"
-                                            type="search"
-                                        />
-                                    </div>
-                                </div>
-                            </div>
+
+
                             <div className="relative z-10 flex items-center lg:hidden">
                                 {/* Mobile menu button */}
                                 <Disclosure.Button className="inline-flex items-center justify-center p-2 text-gray-400 rounded-md hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white">
@@ -72,62 +64,8 @@ export const NavBar: React.FC<NavBarProps> = () => {
                                 </Disclosure.Button>
                             </div>
 
-                            {/* <div className="hidden lg:relative lg:z-10 lg:ml-4 lg:flex lg:items-center">
-                                <button
-                                    type="button"
-                                    className="flex-shrink-0 p-1 text-gray-400 bg-gray-800 rounded-full hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white"
-                                >
-                                    <span className="sr-only">View notifications</span>
-                                    <BellIcon className="w-6 h-6" aria-hidden="true" />
-                                </button>
-
-                                
-                                <Menu as="div" className="relative flex-shrink-0 ml-4">
-                                    <div>
-                                        <Menu.Button className="flex text-sm text-white bg-gray-800 rounded-full focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white">
-                                            <span className="sr-only">Open user menu</span>
-                                            <img className="w-8 h-8 rounded-full" src={user.imageUrl} alt="" />
-                                        </Menu.Button>
-                                    </div>
-                                    <Transition
-                                        as={Fragment}
-                                        enter="transition ease-out duration-100"
-                                        enterFrom="transform opacity-0 scale-95"
-                                        enterTo="transform opacity-100 scale-100"
-                                        leave="transition ease-in duration-75"
-                                        leaveFrom="transform opacity-100 scale-100"
-                                        leaveTo="transform opacity-0 scale-95"
-                                    >
-                                        <Menu.Items className="absolute right-0 w-48 py-1 mt-2 origin-top-right bg-white rounded-md shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
-                                            {userNavigation.map((item) => (
-                                                <Menu.Item key={item.name}>
-                                                    {({ active }) => (
-                                                        <a
-                                                            href={item.href}
-                                                            className={classNames(
-                                                                active ? 'bg-gray-100' : '',
-                                                                'block py-2 px-4 text-sm text-gray-700'
-                                                            )}
-                                                        >
-                                                            {item.name}
-                                                        </a>
-                                                    )}
-                                                </Menu.Item>
-                                            ))}
-                                        </Menu.Items>
-                                    </Transition>
-                                </Menu>
-                            </div> */}
                         </div>
-                        <nav className="hidden lg:py-2 lg:flex lg:space-x-8" aria-label="Global">
-                            {navigation.map((item) => (
-                                <Link key={item.name} href={item.href}>
-                                    <p className="block px-3 py-2 text-base font-medium text-gray-300 rounded-md cursor-pointer hover:bg-gray-700 hover:text-white">
-                                        {item.name}
-                                    </p>
-                                </Link>
-                            ))}
-                        </nav>
+
                     </div>
 
                     <Disclosure.Panel as="nav" className="lg:hidden" aria-label="Global">

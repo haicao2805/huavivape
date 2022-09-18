@@ -20,7 +20,7 @@ const defaultProduct: Product = {
     price: -1,
     images: [{ id: '1', src: '', alt: '' }],
     features: [],
-    boxInformations: [],
+    boxInformation: [],
     specifications: [],
     tastes: [],
 };
@@ -113,12 +113,12 @@ export const ProductDetail: React.FC<ProductDetailProps> = ({ id }) => {
 
                             <form className="mt-6">
                                 <div className="flex mt-10 sm:flex-col1">
-                                    <button
-                                        type="submit"
+                                    <a
+                                        href='https://www.facebook.com/huavivape/'
                                         className="flex items-center justify-center flex-1 max-w-xs px-8 py-3 text-base font-medium text-white bg-indigo-600 border border-transparent rounded-md hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-50 focus:ring-indigo-500 sm:w-full"
                                     >
-                                        Contact Seller
-                                    </button>
+                                        Liên hệ người bán
+                                    </a>
                                 </div>
                             </form>
                         </div>
@@ -130,36 +130,42 @@ export const ProductDetail: React.FC<ProductDetailProps> = ({ id }) => {
                     </div>
                     <div className="border-t border-gray-200">
                         <dl>
-                            <div className="px-4 py-5 bg-gray-50 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
-                                <dt className="text-sm font-medium text-gray-500">Tính Năng</dt>
-                                <ul className="col-span-2 list-disc marker:text-gray-500">
-                                    {product.features.map((item, index) => (
-                                        <li key={index} className="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
-                                            {item}
-                                        </li>
-                                    ))}
-                                </ul>
-                            </div>
-                            <div className="px-4 py-5 bg-white sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
-                                <dt className="text-sm font-medium text-gray-500">Thông Số Kỹ Thuật</dt>
-                                <ul className="col-span-2 list-disc marker:text-gray-500">
-                                    {product.specifications.map((item, index) => (
-                                        <li key={index} className="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
-                                            {item}
-                                        </li>
-                                    ))}
-                                </ul>
-                            </div>
-                            <div className="px-4 py-5 bg-gray-50 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
-                                <dt className="text-sm font-medium text-gray-500">Hộp Sản Phẩm</dt>
-                                <ul className="col-span-2 list-disc marker:text-gray-500">
-                                    {product.boxInformations.map((item, index) => (
-                                        <li key={index} className="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
-                                            {item}
-                                        </li>
-                                    ))}
-                                </ul>
-                            </div>
+                            {product.features.length > 0 &&
+                                <div className="px-4 py-5 bg-gray-50 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+                                    <dt className="text-sm font-medium text-gray-500">Tính Năng</dt>
+                                    <ul className="col-span-2 list-disc marker:text-gray-500">
+                                        {product.features.map((item, index) => (
+                                            <li key={index} className="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
+                                                {item}
+                                            </li>
+                                        ))}
+                                    </ul>
+                                </div>
+                            }
+                            {product.specifications.length > 0 &&
+                                <div className="px-4 py-5 bg-white sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+                                    <dt className="text-sm font-medium text-gray-500">Thông Số Kỹ Thuật</dt>
+                                    <ul className="col-span-2 list-disc marker:text-gray-500">
+                                        {product.specifications.map((item, index) => (
+                                            <li key={index} className="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
+                                                {item}
+                                            </li>
+                                        ))}
+                                    </ul>
+                                </div>
+                            }
+                            {product.boxInformation.length > 0 &&
+                                <div className="px-4 py-5 bg-gray-50 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+                                    <dt className="text-sm font-medium text-gray-500">Hộp Sản Phẩm</dt>
+                                    <ul className="col-span-2 list-disc marker:text-gray-500">
+                                        {product.boxInformation.map((item, index) => (
+                                            <li key={index} className="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
+                                                {item}
+                                            </li>
+                                        ))}
+                                    </ul>
+                                </div>
+                            }
                         </dl>
                     </div>
                 </div>

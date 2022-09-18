@@ -9,7 +9,7 @@ export interface Product {
     images: Image[];
     features: string[];
     specifications: string[];
-    boxInformations: string[];
+    boxInformation: string[];
     tastes: string[];
 }
 
