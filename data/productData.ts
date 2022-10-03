@@ -182,5 +182,33 @@ export const productData: Product[] = [
         specifications: ['Số Hơi : 5000 Puff', 'Dung Tích : 14ml', 'Dung Lượng : 500mAh (hỗ trợ sạc lại)', 'Hàm Lượng : 50mg'],
         boxInformation: ['1 Pod / 1 Hộp', '10 Pod / 1 Pack'],
         tastes: ["Dâu Kiwi", "Dâu Chuối", "Việt Quất", "Mâm Xôi Dưa Hấu", "Kiwi Ổi Chanh Leo", "Dâu Xoài", "Nho", "Bơ Chanh Leo", "Dưa Hấu Chanh", "Sinh Tố Chuối", "Sinh Tố Dưa Hấu", "Sinh Tố Xoài Đào", "Soda Chanh", "Soda Chanh Gừng", "Mojito Chanh", "Tăng Lực Táo"]
+    },
+    {
+        id: '3',
+        name: 'Disposable Minions Mesh-X– Pod 1 Lần 4000 Hơi – 12ML',
+        category: ProductCategory.PodOneTime,
+        price: 240000,
+        images: [
+            {
+                id: '1',
+                src: '/assets/product3/01.jpg',
+                alt: '',
+            },
+            {
+                id: '2',
+                src: '/assets/product3/02.jpg',
+                alt: '',
+            },
+            {
+                id: '3',
+                src: '/assets/product3/03.jpg',
+                alt: '',
+            },
+        ],
+        description:"Nếu bạn đang tìm kiếm dòng Pod 1 lần xu hướng hiện nay với sự tiện lợi đa dạng về mùi vị cũng như ngoại hình nhỏ gọn bắt mắt thì đừng bỏ lỡ chia sẻ này của Vapestore nhé. Vapestore giới thiệu đến bạn dòng sản phẩm Minions Mesh-Q sở hữu kiểu dáng thiết kế độc đáo riêng với nguồn cảm hướng từ những chú minions dễ thương. Cùng với công nghệ mesh coil Pod 1 lần Minions cho hương vị cực kỳ tuyệt vời. Disposable Minions Mesh-X– Pod 1 Lần 4000 Hơi là dòng pod một lần tiện lợi có tới 12 hương vị đa dạng đáp ứng mọi nhu cầu của quý khách hàng. Cùng với công nghệ mesh coil Pod 1 lần Minions cho hương vị cực kỳ tuyệt vời, ngoài ra minions còn có thể sử dụng lên tới 4000 hơi hút với hàm lượng ni là 5% tương ứng với 50mg nicotine và có thể sạc lại pin. Mời bạn xem thông tin chi tiết sản phẩm ngay bên dưới.",
+        features: [],
+        specifications: ['Số lần hút: 4000 hơi', 'Hàm lượng Nic: 3 – 5% (30 Nic – 50 Nic)', 'Điện trở: 1.0Ω', 'Khả năng sạc lại: Có', 'Cổng sạc tương thích: USB Type C', 'Kích thước : 43x86mm', 'Dung tích: 12ml tinh dầu salt nicotine', 'Dung lượng pin trang bị: 650mAh', 'Chủng loại: Pod dùng 1 lần 4000 hơi'],
+        boxInformation: ['1 Pod / 1 Hộp', '10 Pod / 1 Pack'],
+        tastes: ["Dưa & Dừa Lạnh", "Dâu Kiwi Lạnh", "Soda Cam Lạnh", "Hồ Trà Chanh Lạnh", "Viết Quất Lạnh", "Xoài Lạnh", "Đào Lạnh", "Táo Xanh Lạnh", "Nho Lạnh", "Lựa Đỏ Lạnh", "Dưa Hấu Lạnh", "Chuối Lạnh"]
     }
 ];
